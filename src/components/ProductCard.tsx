@@ -5,10 +5,10 @@ import { Product } from '@/types/product';
 
 interface ProductCardProps {
   product: Product;
-  addToCart: (product: Product) => void;
+  handleAddToCart: (product: Product) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, addToCart}) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, handleAddToCart}) => {
  
   
   return (
@@ -22,7 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, addToCart}) => {
           <h1 className="mt-4 text-sm ">{product.title}</h1>
           <p className="mt-2 text-[11px]">${product.price / 100}.00</p>
           </div>
-          <button onClick={()=> addToCart(product)} className='px-4  py-2 border-[1px] border-black rounded-md text-black  bg-gray-300'>Add to cart</button>
+          <button onClick={()=> handleAddToCart(product)} className='px-4  py-2 border-[1px] border-black rounded-md text-black  bg-gray-300'>Add to cart</button>
         </div>
         <img
           className="object-cover "
